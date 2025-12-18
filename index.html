@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Invoice Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body onload="init()">
+
+<div class="sidebar">
+  <h2>Invoice Hub</h2>
+  <button onclick="show('dashboard')">Dashboard</button>
+  <button onclick="show('create')">Create Invoice</button>
+</div>
+
+<div class="content">
+  <div id="dashboard" class="card"></div>
+
+  <div id="create" class="card hidden">
+    <select id="clientSelect"></select>
+    <table id="itemsTable"></table>
+    <button onclick="addItem()">Add Item</button>
+    <p>Subtotal: ₹<span id="subtotal">0</span></p>
+    <p>Tax: ₹<span id="tax">0</span></p>
+    <p><b>Grand Total: ₹<span id="grand">0</span></b></p>
+    <button onclick="saveInvoice()">Save Invoice</button>
+    <button onclick="generatePDF()">Download PDF</button>
+    <button onclick="printInvoice()">Print</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
